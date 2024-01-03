@@ -16,6 +16,7 @@ public class OpenApiInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
+        /*
         log.info("pre handle");
 
         var handlerMethod = (HandlerMethod) handler;
@@ -35,8 +36,9 @@ public class OpenApiInterceptor implements HandlerInterceptor {
         }
 
         log.info("Open Api 가 아닙니다. {}", request.getRequestURI());
+         */
 
-        return false;
+        return true;
     }
 
     @Override

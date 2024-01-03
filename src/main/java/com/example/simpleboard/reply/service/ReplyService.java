@@ -1,9 +1,11 @@
 package com.example.simpleboard.reply.service;
 
 import com.example.simpleboard.common.Status;
+import com.example.simpleboard.crud.CRUDAbstractService;
 import com.example.simpleboard.post.entity.PostEntity;
 import com.example.simpleboard.post.repository.PostRepository;
 import com.example.simpleboard.reply.entity.ReplyEntity;
+import com.example.simpleboard.reply.model.ReplyDto;
 import com.example.simpleboard.reply.model.ReplyRequest;
 import com.example.simpleboard.reply.repository.ReplyRepository;
 import lombok.RequiredArgsConstructor;
@@ -15,8 +17,9 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class ReplyService {
+public class ReplyService extends CRUDAbstractService<ReplyDto, ReplyEntity> {
 
+    /*
     private final ReplyRepository replyRepository;
     private final PostRepository postRepository;
 
@@ -44,5 +47,6 @@ public class ReplyService {
 
         return replyRepository.findAllByPostIdAndStatusOrderByIdDesc(postId, Status.REGISTERED);
     }
+     */
 
 }

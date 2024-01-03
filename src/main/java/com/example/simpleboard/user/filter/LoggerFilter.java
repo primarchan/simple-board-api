@@ -20,14 +20,15 @@ public class LoggerFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 
+
         // 진입 전
-        log.info(">>>>> 진입");
+        // log.info(">>>>> 진입");
 
         // var req = new HttpServletRequestWrapper((HttpServletRequest) request);
         // var res = new HttpServletResponseWrapper((HttpServletResponse) request);
 
-        var req = new ContentCachingRequestWrapper((HttpServletRequest) request);
-        var res = new ContentCachingResponseWrapper((HttpServletResponse) response);
+        // var req = new ContentCachingRequestWrapper((HttpServletRequest) request);
+        // var res = new ContentCachingResponseWrapper((HttpServletResponse) response);
 
         // var br = req.getReader();
         // var list = br.lines().collect(Collectors.toList());
@@ -38,18 +39,19 @@ public class LoggerFilter implements Filter {
         });
          */
 
-        chain.doFilter(req, res);
+        // chain.doFilter(req, res);
 
-        var reqJson = new String(req.getContentAsByteArray());
-        log.info("req : {}", reqJson);
+        // var reqJson = new String(req.getContentAsByteArray());
+        // log.info("req : {}", reqJson);
 
-        var resJson = new String(res.getContentAsByteArray());
-        log.info("res : {}", resJson);
+        // var resJson = new String(res.getContentAsByteArray());
+        // log.info("res : {}", resJson);
 
-        log.info("<<<<< 진입");
+        // log.info("<<<<< 진입");
         // 진입 후
 
-        res.copyBodyToResponse();
+        // res.copyBodyToResponse();
     }
+
 
 }
